@@ -1,1 +1,1 @@
-# store-forntend
+# store-frontend
