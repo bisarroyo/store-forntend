@@ -6,6 +6,7 @@ import useInitialState from '../hooks/useInitialState';
 import Layout from '@containers/Layout';
 import Home from '@pages/Home';
 import LogIn from '@pages/LogIn';
+import SignUp from '@pages/SignUp';
 
 const App = () => {
   const InitialState = useInitialState();
@@ -16,6 +17,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LogIn />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -10,8 +10,9 @@ const LogInForm = () => {
   const onSubmit = data => console.log(data)
   return (
     <LoginFormStyle>
-      <h2>Iniciar sesión</h2>
+      <h2>Registrarse</h2>
       <form onSubmit={handleSubmit(onSubmit)} action="get">
+
       <TextField  
         {...register(
           "email",
@@ -26,6 +27,35 @@ const LogInForm = () => {
       <span className="field-error">
         {errors.email && 'Debe ingresar un correo electrónico válido'}
       </span>
+
+      <TextField  
+        {...register(
+          "name",
+          {
+            required: true,
+          })
+        } 
+        variant="standard"
+        label="Nombre"
+      />
+      <span className="field-error">
+        {errors.name && 'Debe ingresar su nombre'}
+      </span>
+
+      <TextField  
+        {...register(
+          "last_name",
+          {
+            required: true,
+          })
+        } 
+        variant="standard"
+        label="Apellido"
+      />
+      <span className="field-error">
+        {errors.last_name && 'Debe ingresar su apellido'}
+      </span>
+
       <TextField {...register(
         "password",
         { required: true, minLength: 8})}
@@ -39,6 +69,21 @@ const LogInForm = () => {
       <span className="field-error">
         {errors.password && errors.password.type === 'minLength' && 'Su contraseña debe ser de al menos 8 caracteres'}
       </span>
+
+      <TextField {...register(
+        "password",
+        { required: true, minLength: 8})}
+        variant="standard"
+        label="Repita su contraseña"
+        type="password"
+      />
+      <span className="field-error">
+        {errors.password && errors.password.type === 'required' && 'Debe repetir su contaseña'}
+      </span>
+      <span className="field-error">
+        {errors.password && errors.password.type === 'minLength' && 'Su contraseña debe ser de al menos 8 caracteres'}
+      </span>
+
       <Button
         variant="contained"
         type="submit"
