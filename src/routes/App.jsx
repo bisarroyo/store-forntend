@@ -5,7 +5,7 @@ import AppContext from '../context/AppContext'
 import useInitialState from '../hooks/useInitialState';
 import Layout from '@containers/Layout';
 import Home from '@pages/Home';
-import LogIn from '@pages/LogIn';
+import SingIn from '@pages/SingIn';
 import SignUp from '@pages/SignUp';
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LogIn />} />
+            <Route path="/singin" element={<SingIn />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>
         </Layout>

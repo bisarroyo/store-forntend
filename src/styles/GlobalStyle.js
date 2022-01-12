@@ -7,9 +7,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0px;
     font-family: 'Ubuntu', sans-serif;
   }
-  body {
+  /* body {
     background: linear-gradient(#ffffff, #2a9d8f66);
-  }
+  } */
 `;
 
 export default GlobalStyle;

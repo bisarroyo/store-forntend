@@ -1,17 +1,20 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { TextField, Button } from '@material-ui/core'
+import axios from 'axios';
 
 import LoginFormStyle from '@styles/LoginFormStyle'
 
-const LogInForm = () => {
+const SingInForm = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  console.log(errors);
-  const onSubmit = data => console.log(data)
+
+  const onSubmit = data => {
+    axios.post('http://localhost:3000/api/user/singin', data)
+  }
   return (
     <LoginFormStyle>
       <h2>Iniciar sesión</h2>
-      <form onSubmit={handleSubmit(onSubmit)} action="get">
+      <form onSubmit={handleSubmit(onSubmit)} method="post" >
       <TextField  
         {...register(
           "email",
@@ -50,4 +53,4 @@ const LogInForm = () => {
   )
 }
 
-export default LogInForm;
+export default SingInForm;
